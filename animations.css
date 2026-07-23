@@ -956,18 +956,31 @@ i.fab {
    STATS BAR ENHANCEMENTS
    ============================ */
 .stats {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep, #071f38) 60%, #0a2540 100%) !important;
+  background: transparent !important;
+  position: relative;
+  overflow: visible;
+}
+
+.stats::before {
+  display: none !important;
+  animation: none !important;
+}
+
+.stats__bar,
+.stats__grid {
   position: relative;
   overflow: hidden;
 }
 
-.stats::before {
+.stats__bar::after,
+.stats__grid::after {
   content: "";
   position: absolute;
   top: 0;
   left: -50%;
   width: 200%;
   height: 100%;
+  pointer-events: none;
   background: linear-gradient(
     90deg,
     transparent 0%,

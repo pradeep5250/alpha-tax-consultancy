@@ -207,29 +207,43 @@ ul {
 .logo__text {
   display: flex;
   flex-direction: column;
-  line-height: 1.15;
+  justify-content: center;
+  line-height: 1.05;
 }
 
 .logo__text strong {
   font-family: var(--display);
-  font-size: 0.95rem;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--navy);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 0 rgba(11, 42, 74, 0.12);
 }
 
 .logo__text > span {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--green);
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.12rem;
+  font-family: var(--display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  white-space: nowrap;
+  text-shadow: 0 1px 0 rgba(11, 42, 74, 0.08);
 }
 
-.logo__text em {
+.logo__tm {
+  font-size: 0.55em;
+  font-weight: 800;
+  color: #e11d2e;
+  line-height: 1;
+  position: relative;
+  top: -0.15em;
+  left: 0.05em;
+  letter-spacing: 0;
   font-style: normal;
-  font-size: 0.65rem;
-  color: var(--muted);
-  margin-top: 0.1rem;
 }
 
 .nav {
@@ -294,9 +308,8 @@ ul {
   position: absolute;
   top: calc(100% + 0.4rem);
   left: 0;
-  min-width: 260px;
-  max-height: min(70vh, 480px);
-  overflow-x: hidden;
+  min-width: 230px;
+  max-height: min(70vh, 420px);
   overflow-y: auto;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(12px);
@@ -309,19 +322,21 @@ ul {
   transform: translateY(8px);
   transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
   z-index: 300;
-  display: block;
 }
 
 .nav__dropdown-menu--cols {
-  min-width: 280px;
-  display: block;
-  grid-template-columns: none;
+  min-width: 520px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 0.35rem;
+  max-height: none;
+  overflow: visible;
 }
 
 .nav__dropdown--wide .nav__dropdown-menu {
-  left: 0;
+  left: 50%;
   right: auto;
-  transform: translateY(8px);
+  transform: translate(-50%, 8px);
 }
 
 .nav__dropdown:hover .nav__dropdown-menu,
@@ -335,7 +350,7 @@ ul {
 .nav__dropdown--wide:hover .nav__dropdown-menu,
 .nav__dropdown--wide:focus-within .nav__dropdown-menu,
 .nav__dropdown--wide.open .nav__dropdown-menu {
-  transform: translateY(0);
+  transform: translate(-50%, 0);
 }
 
 .nav__dropdown-menu a {
@@ -347,7 +362,7 @@ ul {
   text-transform: none;
   letter-spacing: 0;
   font-weight: 500;
-  white-space: nowrap;
+  white-space: normal;
   transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
 }
 
@@ -394,8 +409,8 @@ ul {
 
 /* About hero */
 .about-hero {
-  padding: 2.5rem 0 2rem;
-  background: linear-gradient(180deg, #f3f6fa 0%, var(--white) 70%);
+  padding: 1.5rem 0 2rem;
+  background: linear-gradient(180deg, #f3f6fa 0%, var(--bg) 70%, var(--bg) 100%);
 }
 
 .about-hero__grid {
@@ -526,19 +541,40 @@ ul {
   letter-spacing: 0.04em;
 }
 
-/* Stats — navy bar matching site design */
+/* Stats — rounded navy bar matching home */
 .stats {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep, #071f38) 60%, #0a2540 100%);
+  background: var(--bg);
   color: var(--white);
-  padding: 1.55rem 0;
+  padding: 0.85rem 0 1.25rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   margin-top: 0;
   z-index: 1;
   border: none;
 }
 
 .stats::before {
+  display: none;
+}
+
+.stats__bar,
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep, #071f38) 60%, #0a2540 100%) !important;
+  border-radius: 20px !important;
+  padding: 1.2rem 0.75rem !important;
+  box-shadow: 0 14px 36px rgba(7, 31, 56, 0.22);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.stats__bar::before,
+.stats__grid::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -551,21 +587,6 @@ ul {
   );
 }
 
-.stats__bar,
-.stats__grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: center;
-  gap: 0;
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
-  box-shadow: none;
-  position: relative;
-  z-index: 1;
-  overflow: visible;
-}
-
 .stats__item {
   display: flex;
   align-items: center;
@@ -574,6 +595,7 @@ ul {
   text-align: left;
   padding: 0.25rem 1.1rem;
   position: relative;
+  z-index: 1;
 }
 
 .stats__item:not(:last-child)::after {
@@ -613,7 +635,8 @@ ul {
 
 /* Why we exist */
 .about-exist {
-  padding: 2.5rem 0;
+  padding: 1.5rem 0;
+  background: var(--bg);
 }
 
 .about-exist__grid {
@@ -673,7 +696,7 @@ ul {
 
 /* Expertise */
 .about-expertise {
-  padding: 2.5rem 0 2.5rem;
+  padding: 1.5rem 0 2.5rem;
   background: var(--white);
 }
 
@@ -734,7 +757,7 @@ ul {
 
 /* Team & Experience */
 .about-team {
-  padding: 2.5rem 0;
+  padding: 1.5rem 0;
   background: #f0f4f9;
 }
 
@@ -798,7 +821,7 @@ ul {
 .about-cta {
   background: var(--navy);
   color: var(--white);
-  padding: 2.25rem 0;
+  padding: 1.35rem 0;
 }
 
 .about-cta__inner {
@@ -848,7 +871,7 @@ ul {
   background:
     radial-gradient(ellipse 70% 80% at 10% 20%, rgba(26, 122, 76, 0.08), transparent 55%),
     linear-gradient(180deg, #f3f6f9 0%, #eef3f7 100%);
-  padding: 3.75rem 0;
+  padding: 2rem 0;
   border-top: 1px solid var(--line);
 }
 
@@ -936,8 +959,9 @@ ul {
 
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.35fr 0.85fr 1fr 1.25fr;
-  gap: 2rem;
+  grid-template-columns: 1.3fr 0.8fr 1.05fr 1.05fr 0.9fr 1.15fr;
+  gap: 1.75rem 1.25rem;
+  align-items: start;
   padding-bottom: 2.75rem;
 }
 
@@ -946,8 +970,8 @@ ul {
   color: var(--white);
 }
 
-.logo--footer .logo__text > span {
-  color: #7dcf9f;
+.logo--footer .logo__tm {
+  color: #ff5a6a;
 }
 
 .site-footer__brand p {
@@ -1061,7 +1085,11 @@ ul {
 /* Responsive */
 @media (max-width: 1100px) {
   .site-footer__grid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
   }
 
   .about-cta__inner {
@@ -1206,6 +1234,11 @@ ul {
 
   .nav__dropdown.open .nav__dropdown-menu,
   .nav__dropdown.open .nav__dropdown-menu--cols {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .nav__dropdown.open .nav__dropdown-menu:not(.nav__dropdown-menu--cols) {
     display: block;
   }
 
@@ -1259,11 +1292,6 @@ ul {
   .top-bar__social a:hover {
     color: #9fe0bc;
   }
-
-  .logo__text em {
-    display: none;
-  }
-
   .logo__img {
   width: 56px;
   height: 56px;

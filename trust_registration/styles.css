@@ -195,26 +195,43 @@ ol {
 .logo__text {
   display: flex;
   flex-direction: column;
-  line-height: 1.15;
+  justify-content: center;
+  line-height: 1.05;
 }
 
 .logo__text strong {
   font-family: var(--display);
-  font-size: 0.95rem;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--navy);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 0 rgba(11, 42, 74, 0.12);
 }
 
 .logo__text > span {
-  font-size: 0.78rem;
-  color: var(--green);
-  font-weight: 600;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.12rem;
+  font-family: var(--display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 1px 0 rgba(11, 42, 74, 0.08);
 }
 
-.logo__text em {
+.logo__tm {
+  font-size: 0.55em;
+  font-weight: 800;
+  color: #e11d2e;
+  line-height: 1;
+  position: relative;
+  top: -0.15em;
+  left: 0.05em;
+  letter-spacing: 0;
   font-style: normal;
-  font-size: 0.65rem;
-  color: var(--muted);
 }
 
 .nav-toggle {
@@ -343,7 +360,7 @@ ol {
 .tr-hero {
   position: relative;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
   background: #fff;
 }
 
@@ -457,19 +474,25 @@ ol {
   position: relative;
   min-height: 520px;
   margin: 0;
-  padding: 1.5rem 1.5rem 1.5rem 0.75rem;
+  padding: 1.75rem clamp(1.5rem, 3vw, 2.5rem) 2.5rem 0.5rem;
   background: transparent;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 
 .tr-hero__photo-wrap {
   position: relative;
   width: 100%;
-  max-width: 480px;
-  aspect-ratio: 1 / 1;
+  max-width: 560px;
+  overflow: visible;
+}
+
+.tr-hero__photo-frame {
+  width: 100%;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   border: 4px solid #1e5631;
   border-radius: 0;
@@ -481,7 +504,7 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center center;
   display: block;
   margin: 0;
   padding: 0;
@@ -490,8 +513,8 @@ ol {
 
 .tr-hero__badge {
   position: absolute;
-  right: -12px;
-  bottom: -12px;
+  right: -18px;
+  bottom: -18px;
   z-index: 3;
   width: 118px;
   height: 118px;
@@ -504,8 +527,9 @@ ol {
   justify-content: center;
   text-align: center;
   box-shadow: 0 12px 28px rgba(0, 33, 71, 0.4);
-  border: 3px solid rgba(255, 255, 255, 0.25);
+  border: 3px solid #fff;
   animation: badge-float 3.5s ease-in-out infinite;
+  overflow: visible;
 }
 
 .tr-hero__badge strong {
@@ -559,7 +583,7 @@ ol {
 
 /* Benefits — single row panel like the mockup */
 .tr-benefits {
-  padding: 2.75rem 0 3.5rem;
+  padding: 1.5rem 0 1.85rem;
   background: #fff;
 }
 
@@ -632,7 +656,7 @@ ol {
 
 /* Process */
 .tr-process {
-  padding: 2.75rem 0 3.25rem;
+  padding: 1.5rem 0 1.75rem;
   background: #fff;
 }
 
@@ -716,7 +740,7 @@ ol {
   display: grid;
   grid-template-columns: 1.45fr 1fr;
   column-gap: 0.93rem;
-  row-gap: 0.35rem;
+  row-gap: 0.85rem;
   align-items: stretch;
 }
 
@@ -727,6 +751,12 @@ ol {
   border: 1px solid var(--line);
   background: #fff;
   box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.tr-req__panel .tr-req__body {
+  flex: 1;
 }
 
 .tr-docs__header {
@@ -857,6 +887,7 @@ ol {
   padding: 1.5rem 1.25rem;
   background: #f3f5f7;
   min-height: 200px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1191,8 +1222,12 @@ ol {
   }
 
   .tr-hero__photo-wrap {
-    max-width: 360px;
+    max-width: 440px;
     margin-inline: auto;
+  }
+
+  .tr-hero__photo-frame {
+    aspect-ratio: 3 / 2;
   }
 
   .tr-hero__edge {
@@ -1206,8 +1241,8 @@ ol {
   .tr-hero__badge {
     width: 96px;
     height: 96px;
-    right: -8px;
-    bottom: -8px;
+    right: -12px;
+    bottom: -12px;
   }
 
   .tr-benefits__panel {

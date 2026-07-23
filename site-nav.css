@@ -1,0 +1,118 @@
+/* Shared site navbar — same font, size & hover underline on every page */
+:root {
+  --nav-h: 78px;
+}
+
+.navbar__inner {
+  min-height: var(--nav-h);
+}
+
+.logo__img {
+  width: 56px;
+  height: 56px;
+}
+
+.logo__text strong {
+  font-family: var(--display, Outfit, Manrope, system-ui, sans-serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--navy, #0b2a4a);
+}
+
+.logo__text > span {
+  font-family: var(--display, Outfit, Manrope, system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy, #0b2a4a);
+}
+
+.logo__tm {
+  font-size: 0.55em;
+  font-weight: 800;
+}
+
+.nav__link {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  font-family: var(--display, Outfit, Manrope, system-ui, sans-serif) !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  padding: 0.55rem 0.65rem !important;
+  color: var(--navy, #0b2a4a) !important;
+  line-height: 1.2 !important;
+  transition: color 0.25s ease !important;
+}
+
+/* Touch / hover underline animation (same on all pages) */
+.nav__link::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 2px !important;
+  left: 50% !important;
+  right: auto !important;
+  width: 0 !important;
+  height: 2px !important;
+  background: var(--green, #1a7a4c) !important;
+  border-radius: 2px !important;
+  transition: width 0.3s ease, left 0.3s ease !important;
+  display: block !important;
+}
+
+.nav__link:hover::after,
+.nav__link.active::after,
+.nav__dropdown:hover > .nav__trigger::after,
+.nav__dropdown.open > .nav__trigger::after {
+  width: 70% !important;
+  left: 15% !important;
+}
+
+.nav__link i {
+  font-size: 0.65rem !important;
+  transition: transform 0.25s ease;
+}
+
+.nav__link:hover,
+.nav__link.active,
+.nav__dropdown:hover > .nav__trigger,
+.nav__dropdown.open > .nav__trigger {
+  color: var(--green, #1a7a4c) !important;
+}
+
+.nav__dropdown:hover > .nav__trigger i,
+.nav__dropdown.open > .nav__trigger i {
+  transform: rotate(180deg);
+}
+
+.btn--nav {
+  font-family: var(--display, Outfit, Manrope, system-ui, sans-serif) !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+  padding: 0.7rem 1.15rem !important;
+}
+
+.btn--nav::after {
+  display: none !important;
+}
+
+.top-bar {
+  font-size: 0.82rem !important;
+}
+
+@media (max-width: 900px) {
+  .nav__link::after,
+  .nav__link:hover::after,
+  .nav__link.active::after,
+  .nav__dropdown:hover > .nav__trigger::after,
+  .nav__dropdown.open > .nav__trigger::after {
+    display: none !important;
+  }
+}

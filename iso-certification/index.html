@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -34,6 +34,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../site-nav.css" />
+  <link rel="stylesheet" href="../site-footer.css" />
   <link rel="stylesheet" href="../animations.css" />
   <script type="application/ld+json">
 {
@@ -45,7 +47,7 @@
       "name": "Alpha Tax Consultants",
       "url": "https://www.alphataxconsultants.com/",
       "logo": "https://www.alphataxconsultants.com/images/alpha-tax-logo.png",
-      "email": "info@alphataxconsultants.com",
+      "email": "info@alphatax.in",
       "telephone": "+91-99406-66015",
       "slogan": "Your Compliance, Our Commitment.",
       "address": {
@@ -65,7 +67,7 @@
       "image": "https://www.alphataxconsultants.com/images/alpha-tax-logo.png",
       "url": "https://www.alphataxconsultants.com/",
       "telephone": "+91-99406-66015",
-      "email": "info@alphataxconsultants.com",
+      "email": "info@alphatax.in",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -171,7 +173,7 @@
         <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
       </div>
       <div class="top-bar__contacts">
-        <a href="mailto:info@alphataxconsultants.com"><i class="fa-regular fa-envelope"></i> info@alphataxconsultants.com</a>
+        <a href="mailto:info@alphatax.in"><i class="fa-regular fa-envelope"></i> info@alphatax.in</a>
         <a href="tel:+919940666015"><i class="fa-solid fa-phone"></i> +91 99406 66015</a>
       </div>
       <div class="top-bar__social">
@@ -188,9 +190,8 @@
       <a href="../index.html" class="logo">
         <img src="../images/alpha-tax-logo.png" alt="Alpha Tax Consultants" class="logo__img" width="56" height="56" />
         <span class="logo__text">
-          <strong>ALPHA TAX</strong>
-          <span>Consultants</span>
-          <em>Your Compliance, Our Commitment.</em>
+          <strong>ALPHA</strong>
+          <span>TAX CONSULTANTS<sup class="logo__tm" aria-hidden="true">TM</sup></span>
         </span>
       </a>
 
@@ -246,10 +247,10 @@
             <a href="../roc-filing/index.html">ROC Filing</a>
           </div>
         </div>
-        <a href="#contact" class="nav__link">Contact Us</a>
+        <a href="../contact-us/index.html" class="nav__link">Contact Us</a>
       </nav>
 
-      <a href="tel:+919940666015" class="btn btn--primary btn--nav">Get a Quote</a>
+      <a href="../contact-us/index.html#message" class="btn btn--primary btn--nav">Get a Quote</a>
     </div>
   </header></div>
 
@@ -424,27 +425,95 @@
             <h2>Get ISO Certified Today!</h2>
             <p>Enhance quality, trust, and global opportunities for your business.</p>
           </div>
-          <a href="tel:+919940666015" class="btn btn--green btn--lg">Contact Us Now <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="../contact-us/index.html#message" class="btn btn--green btn--lg">Contact Us Now <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container trust-bar">
-      <div><i class="fa-solid fa-user-tie"></i><span>Expert Guidance</span></div>
-      <div><i class="fa-solid fa-bolt"></i><span>Fast &amp; Easy Process</span></div>
-      <div><i class="fa-solid fa-tags"></i><span>Affordable Pricing</span></div>
-      <div><i class="fa-solid fa-lock"></i><span>100% Confidential</span></div>
-      <div><i class="fa-solid fa-headset"></i><span>End-to-End Support</span></div>
+    <footer class="site-footer" id="contact">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="../index.html" class="logo logo--footer">
+          <img src="../images/alpha-tax-logo.png" alt="Alpha Tax Consultants" class="logo__img" width="56" height="56" />
+          <span class="logo__text">
+            <strong>ALPHA</strong>
+            <span>TAX CONSULTANTS<sup class="logo__tm" aria-hidden="true">TM</sup></span>
+          </span>
+        </a>
+        <p>
+          Providing end-to-end tax, registration, and compliance solutions so businesses stay
+          protected and growth-ready.
+        </p>
+        <div class="site-footer__social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="site-footer__col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about/index.html">About Us</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../index.html#why">Why Us</a></li>
+          <li><a href="../index.html#resources">Resources</a></li>
+          <li><a href="../contact-us/index.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h3>Startup Company</h3>
+        <ul>
+          <li><a href="../private-limited-company/index.html">Private Limited Company</a></li>
+          <li><a href="../public-limited-company/index.html">Public Limited Company</a></li>
+          <li><a href="../llp-registration/index.html">LLP Registration</a></li>
+          <li><a href="../one-person-company/index.html">One Person Company</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h3>Registrations</h3>
+        <ul>
+          <li><a href="../gst_registration/index.html">GST Registration</a></li>
+          <li><a href="../msme-registration/index.html">MSME Registration</a></li>
+          <li><a href="../pf_esi_registration/index.html">PF &amp; ESI Registration</a></li>
+          <li><a href="../trade-mark-registration/index.html">Trade Mark</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h3>Compliance</h3>
+        <ul>
+          <li><a href="../gst-filing/index.html">GST Returns Filing</a></li>
+          <li><a href="../income_tax_filing/index.html">Income Tax Returns</a></li>
+          <li><a href="../tds_filing/index.html">TDS Filing</a></li>
+          <li><a href="../roc-filing/index.html">ROC Filing</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h3>Contact Us</h3>
+        <ul class="site-footer__contact">
+          <li class="footer__address"><i class="fa-solid fa-location-dot"></i> <span><strong>Address</strong><br>Alpha Tax Consultants<br>No. 13/15, 2nd Floor, Lakshmi Nagar, Arcot Road, Porur, Chennai - 600 116</span></li>
+          <li><a href="tel:+919940666015"><i class="fa-solid fa-phone"></i> +91 99406 66015</a></li>
+          <li><a href="mailto:info@alphatax.in"><i class="fa-regular fa-envelope"></i> info@alphatax.in</a></li>
+          <li><i class="fa-regular fa-clock"></i> Mon — Sat: 9:30 AM — 6:30 PM</li>
+        </ul>
+      </div>
     </div>
-    <div class="container footer__address-bar">
-      <span class="footer__address"><i class="fa-solid fa-location-dot"></i> <span><strong>Address</strong> — Alpha Tax Consultants, No. 13/15, 2nd Floor, Lakshmi Nagar, Arcot Road, Porur, Chennai - 600 116</span></span>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; <span id="year"></span> Alpha Tax Consultants. <a href="../index.html">Back to Home</a></p>
+
+    <div class="site-footer__bottom">
+      <div class="container site-footer__bottom-inner">
+        <p>&copy; <span id="year"></span> Alpha Tax Consultants. All Rights Reserved.</p>
         <p class="footer__credit">Developed by <a href="https://www.mintxsolutions.com/" target="_blank" rel="noopener noreferrer">MintX Solutions</a></p>
+        <nav aria-label="Legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+        </nav>
       </div>
     </div>
   </footer>

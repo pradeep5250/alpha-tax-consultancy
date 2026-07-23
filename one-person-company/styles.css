@@ -135,10 +135,10 @@ a { color: inherit; text-decoration: none; }
   border-radius: 8px;
 }
 
-.logo__text { display: flex; flex-direction: column; line-height: 1.15; }
-.logo__text strong { font-family: var(--display); font-size: 0.95rem; color: var(--navy); }
-.logo__text > span { font-size: 0.78rem; font-weight: 600; color: var(--green); }
-.logo__text em { font-style: normal; font-size: 0.65rem; color: var(--muted); }
+.logo__text { display: flex; flex-direction: column; justify-content: center; line-height: 1.05; }
+.logo__text strong { font-family: var(--display); font-size: 1.4rem; font-weight: 800; color: var(--navy); letter-spacing: 0.06em; text-shadow: 0 1px 0 rgba(11, 42, 74, 0.12); }
+.logo__text > span { display: inline-flex; align-items: flex-start; gap: 0.12rem; font-family: var(--display); font-size: 0.72rem; font-weight: 700; color: var(--navy); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; text-shadow: 0 1px 0 rgba(11, 42, 74, 0.08); }
+.logo__tm { font-size: 0.55em; font-weight: 800; color: #e11d2e; line-height: 1; position: relative; top: -0.15em; left: 0.05em; letter-spacing: 0; font-style: normal; }
 
 .nav { display: flex; align-items: center; gap: 0.15rem; }
 
@@ -367,7 +367,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Benefits */
-.benefits { padding: 2.5rem 0; background: var(--white); }
+.benefits { padding: 1.5rem 0; background: var(--white); }
 
 .benefits__grid {
   display: grid;
@@ -405,7 +405,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Process */
-.process { padding: 1rem 0 4rem; background: var(--bg); }
+.process { padding: 1rem 0 2rem; background: var(--bg); }
 
 .process__track {
   display: flex;
@@ -440,7 +440,7 @@ a { color: inherit; text-decoration: none; }
 .process__arrow { color: #94a3b8; padding-top: 1.15rem; }
 
 /* Docs */
-.docs { padding: 2.5rem 0; background: var(--white); }
+.docs { padding: 1.5rem 0; background: var(--white); }
 
 .docs__grid {
   display: grid;
@@ -644,5 +644,4 @@ a { color: inherit; text-decoration: none; }
   .benefits__grid,
   .trust__grid { grid-template-columns: 1fr 1fr; }
   .process__step { flex-basis: 100%; }
-  .logo__text em { display: none; }
 }

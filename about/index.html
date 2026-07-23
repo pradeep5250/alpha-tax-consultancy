@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -34,6 +34,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../site-nav.css" />
+  <link rel="stylesheet" href="../site-footer.css" />
   <link rel="stylesheet" href="../animations.css" />
   <script type="application/ld+json">
 {
@@ -45,7 +47,7 @@
       "name": "Alpha Tax Consultants",
       "url": "https://www.alphataxconsultants.com/",
       "logo": "https://www.alphataxconsultants.com/images/alpha-tax-logo.png",
-      "email": "info@alphataxconsultants.com",
+      "email": "info@alphatax.in",
       "telephone": "+91-99406-66015",
       "slogan": "Your Compliance, Our Commitment.",
       "address": {
@@ -65,7 +67,7 @@
       "image": "https://www.alphataxconsultants.com/images/alpha-tax-logo.png",
       "url": "https://www.alphataxconsultants.com/",
       "telephone": "+91-99406-66015",
-      "email": "info@alphataxconsultants.com",
+      "email": "info@alphatax.in",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -168,7 +170,7 @@
     <div class="container top-bar__inner">
       <div class="top-bar__item"><i class="fa-regular fa-clock"></i><span>Mon - Sat: 9:00 AM - 7:00 PM</span></div>
       <div class="top-bar__contacts">
-        <a href="mailto:info@alphataxconsultants.com"><i class="fa-regular fa-envelope"></i> info@alphataxconsultants.com</a>
+        <a href="mailto:info@alphatax.in"><i class="fa-regular fa-envelope"></i> info@alphatax.in</a>
         <a href="tel:+919940666015"><i class="fa-solid fa-phone"></i> +91 99406 66015</a>
       </div>
       <div class="top-bar__social">
@@ -185,9 +187,8 @@
       <a href="../index.html" class="logo">
         <img src="../images/alpha-tax-logo.png" alt="Alpha Tax Consultants" class="logo__img" width="56" height="56" />
         <span class="logo__text">
-          <strong>ALPHA TAX</strong>
-          <span>Consultants</span>
-          <em>Your Compliance, Our Commitment.</em>
+          <strong>ALPHA</strong>
+          <span>TAX CONSULTANTS<sup class="logo__tm" aria-hidden="true">TM</sup></span>
         </span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -209,7 +210,7 @@
         </div>
         <div class="nav__dropdown nav__dropdown--wide">
           <button type="button" class="nav__link nav__trigger" aria-expanded="false" aria-haspopup="true">Registrations <i class="fa-solid fa-chevron-down"></i></button>
-          <div class="nav__dropdown-menu">
+          <div class="nav__dropdown-menu nav__dropdown-menu--cols">
             <a href="../gst_registration/index.html">GST Registration</a>
             <a href="../msme-registration/index.html">MSME Registration</a>
             <a href="../pf_esi_registration/index.html">PF &amp; ESI Registration</a>
@@ -239,9 +240,9 @@
             <a href="../roc-filing/index.html">ROC Filing</a>
           </div>
         </div>
-        <a href="../index.html#contact" class="nav__link">Contact Us</a>
+        <a href="../contact-us/index.html" class="nav__link">Contact Us</a>
       </nav>
-      <a href="../index.html#contact" class="btn btn--primary btn--nav">Get a Quote</a>
+      <a href="../contact-us/index.html#message" class="btn btn--primary btn--nav">Get a Quote</a>
     </div>
   </header></div>
 
@@ -293,40 +294,42 @@
 
     <!-- Stats -->
     <section class="stats" aria-label="Company statistics">
-      <div class="container stats__grid">
-        <div class="stats__item">
-          <i class="fa-solid fa-users" aria-hidden="true"></i>
-          <div>
-            <strong data-count="500">0</strong><span>+</span>
-            <p>Happy Clients</p>
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stats__item">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            <div>
+              <strong data-count="500">0</strong><span>+</span>
+              <p>Happy Clients</p>
+            </div>
           </div>
-        </div>
-        <div class="stats__item">
-          <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
-          <div>
-            <strong data-count="1000">0</strong><span>+</span>
-            <p>Projects Completed</p>
+          <div class="stats__item">
+            <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
+            <div>
+              <strong data-count="1000">0</strong><span>+</span>
+              <p>Projects Completed</p>
+            </div>
           </div>
-        </div>
-        <div class="stats__item">
-          <i class="fa-solid fa-award" aria-hidden="true"></i>
-          <div>
-            <strong data-count="10">0</strong><span>+</span>
-            <p>Years of Experience</p>
+          <div class="stats__item">
+            <i class="fa-solid fa-award" aria-hidden="true"></i>
+            <div>
+              <strong data-count="10">0</strong><span>+</span>
+              <p>Years of Experience</p>
+            </div>
           </div>
-        </div>
-        <div class="stats__item">
-          <i class="fa-solid fa-headset" aria-hidden="true"></i>
-          <div>
-            <strong>24/7</strong>
-            <p>Support</p>
+          <div class="stats__item">
+            <i class="fa-solid fa-headset" aria-hidden="true"></i>
+            <div>
+              <strong>24/7</strong>
+              <p>Support</p>
+            </div>
           </div>
-        </div>
-        <div class="stats__item">
-          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-          <div>
-            <strong>Pan India</strong>
-            <p>Service</p>
+          <div class="stats__item">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <div>
+              <strong>Pan India</strong>
+              <p>Service</p>
+            </div>
           </div>
         </div>
       </div>
@@ -350,7 +353,7 @@
         </div>
         <div class="about-exist__media">
           <img
-            src="images/about-compliance-work.png"
+            src="images/about-compliance-work.jpg"
             alt="Professional reviewing financial documents with calculator and laptop"
             width="900"
             height="600"
@@ -407,7 +410,7 @@
           </p>
           <img
             class="about-team__photo"
-            src="images/about-team.png"
+            src="images/about-team.jpg"
             alt="Alpha Tax Consultants professional team"
             width="800"
             height="480"
@@ -429,7 +432,7 @@
           </ul>
           <img
             class="about-team__trophy"
-            src="images/star-trophy.png"
+            src="images/star-trophy.jpg"
             alt="Gold star trophy representing excellence"
             width="600"
             height="360"
@@ -478,26 +481,26 @@
     <section class="about-cta">
       <div class="container about-cta__inner">
         <h2>Let Us Handle Your Compliance, You Focus on <span>Growing Your Business!</span></h2>
-        <a href="../index.html#contact" class="btn btn--primary">
+        <a href="../contact-us/index.html#message" class="btn btn--primary">
           Contact Us Today <i class="fa-solid fa-arrow-right"></i>
         </a>
         <div class="about-cta__contacts">
           <a href="tel:+919940666015"><i class="fa-solid fa-phone"></i> +91 99406 66015</a>
-          <a href="mailto:info@alphataxconsultants.com"><i class="fa-regular fa-envelope"></i> info@alphataxconsultants.com</a>
+          <a href="mailto:info@alphatax.in"><i class="fa-regular fa-envelope"></i> info@alphatax.in</a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer">
+    <footer class="site-footer" id="contact">
     <div class="container site-footer__grid">
       <div class="site-footer__brand">
         <a href="../index.html" class="logo logo--footer">
           <img src="../images/alpha-tax-logo.png" alt="Alpha Tax Consultants" class="logo__img" width="56" height="56" />
           <span class="logo__text">
-            <strong>ALPHA TAX</strong>
-            <span>Consultants</span>
+            <strong>ALPHA</strong>
+            <span>TAX CONSULTANTS<sup class="logo__tm" aria-hidden="true">TM</sup></span>
           </span>
         </a>
         <p>
@@ -520,19 +523,37 @@
           <li><a href="../index.html#services">Services</a></li>
           <li><a href="../index.html#why">Why Us</a></li>
           <li><a href="../index.html#resources">Resources</a></li>
-          <li><a href="../index.html#contact">Contact Us</a></li>
+          <li><a href="../contact-us/index.html">Contact Us</a></li>
         </ul>
       </div>
 
       <div class="site-footer__col">
-        <h3>Our Services</h3>
+        <h3>Startup Company</h3>
         <ul>
-          <li><a href="../gst-filing/index.html">GST Filing</a></li>
-          <li><a href="../tds_filing/index.html">TDS Filing</a></li>
+          <li><a href="../private-limited-company/index.html">Private Limited Company</a></li>
+          <li><a href="../public-limited-company/index.html">Public Limited Company</a></li>
+          <li><a href="../llp-registration/index.html">LLP Registration</a></li>
+          <li><a href="../one-person-company/index.html">One Person Company</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h3>Registrations</h3>
+        <ul>
+          <li><a href="../gst_registration/index.html">GST Registration</a></li>
+          <li><a href="../msme-registration/index.html">MSME Registration</a></li>
+          <li><a href="../pf_esi_registration/index.html">PF &amp; ESI Registration</a></li>
+          <li><a href="../trade-mark-registration/index.html">Trade Mark</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h3>Compliance</h3>
+        <ul>
+          <li><a href="../gst-filing/index.html">GST Returns Filing</a></li>
           <li><a href="../income_tax_filing/index.html">Income Tax Returns</a></li>
+          <li><a href="../tds_filing/index.html">TDS Filing</a></li>
           <li><a href="../roc-filing/index.html">ROC Filing</a></li>
-          <li><a href="../pf_esi_filing/index.html">PF &amp; ESI Filing</a></li>
-          <li><a href="../gst_registration/index.html">Business Registration</a></li>
         </ul>
       </div>
 
@@ -541,7 +562,7 @@
         <ul class="site-footer__contact">
           <li class="footer__address"><i class="fa-solid fa-location-dot"></i> <span><strong>Address</strong><br>Alpha Tax Consultants<br>No. 13/15, 2nd Floor, Lakshmi Nagar, Arcot Road, Porur, Chennai - 600 116</span></li>
           <li><a href="tel:+919940666015"><i class="fa-solid fa-phone"></i> +91 99406 66015</a></li>
-          <li><a href="mailto:info@alphataxconsultants.com"><i class="fa-regular fa-envelope"></i> info@alphataxconsultants.com</a></li>
+          <li><a href="mailto:info@alphatax.in"><i class="fa-regular fa-envelope"></i> info@alphatax.in</a></li>
           <li><i class="fa-regular fa-clock"></i> Mon — Sat: 9:30 AM — 6:30 PM</li>
         </ul>
       </div>
