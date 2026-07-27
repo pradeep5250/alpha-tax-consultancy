@@ -1,4 +1,4 @@
-/* Shared site navbar — same font, size & hover underline on every page */
+/* Shared site navbar — same font, size, colors & hover on every page */
 :root {
   --nav-h: 78px;
 }
@@ -8,13 +8,13 @@
 }
 
 .logo__img {
-  width: 56px;
-  height: 56px;
+  width: 68px !important;
+  height: 68px !important;
 }
 
 .logo__text strong {
   font-family: var(--display, Outfit, Manrope, system-ui, sans-serif);
-  font-size: 1.4rem;
+  font-size: 1.75rem !important;
   font-weight: 800;
   letter-spacing: 0.06em;
   color: var(--navy, #0b2a4a);
@@ -22,7 +22,7 @@
 
 .logo__text > span {
   font-family: var(--display, Outfit, Manrope, system-ui, sans-serif);
-  font-size: 0.72rem;
+  font-size: 0.88rem !important;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -30,8 +30,19 @@
 }
 
 .logo__tm {
-  font-size: 0.55em;
+  font-size: 0.55em !important;
   font-weight: 800;
+}
+
+.top-bar {
+  font-size: 0.82rem !important;
+  background: var(--navy, #0b2a4a) !important;
+}
+
+.top-bar a:hover,
+.top-bar__contacts a:hover,
+.top-bar__social a:hover {
+  color: #9fe0bc !important;
 }
 
 .nav__link {
@@ -50,7 +61,7 @@
   transition: color 0.25s ease !important;
 }
 
-/* Touch / hover underline animation (same on all pages) */
+/* Touch / hover underline animation */
 .nav__link::after {
   content: "" !important;
   position: absolute !important;
@@ -90,6 +101,17 @@
   transform: rotate(180deg);
 }
 
+/* Dropdown menu — home green hover on all pages */
+.nav__dropdown-menu a {
+  color: var(--ink, #1a2332) !important;
+}
+
+.nav__dropdown-menu a:hover,
+.nav__dropdown-menu a.is-active {
+  background: var(--green-soft, #e8f5ee) !important;
+  color: var(--green, #1a7a4c) !important;
+}
+
 .btn--nav {
   font-family: var(--display, Outfit, Manrope, system-ui, sans-serif) !important;
   font-size: 0.8rem !important;
@@ -97,14 +119,16 @@
   letter-spacing: 0.02em !important;
   text-transform: uppercase !important;
   padding: 0.7rem 1.15rem !important;
+  background: var(--green, #1a7a4c) !important;
+  color: var(--white, #fff) !important;
+}
+
+.btn--nav:hover {
+  background: var(--green-dark, #14603c) !important;
 }
 
 .btn--nav::after {
   display: none !important;
-}
-
-.top-bar {
-  font-size: 0.82rem !important;
 }
 
 @media (max-width: 900px) {

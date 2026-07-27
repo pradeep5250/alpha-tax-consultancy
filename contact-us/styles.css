@@ -368,7 +368,7 @@ main section[id] {
 }
 
 .pvt-hero__figure:hover .pvt-hero__img {
-  transform: scale(1.025);
+  
   box-shadow: 0 12px 26px rgba(11, 42, 74, 0.12);
 }
 

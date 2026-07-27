@@ -525,8 +525,26 @@ i.fab {
   transform: scale(1.2) rotate(-5deg);
 }
 
-/* Hero image visual enhancements */
-.page-hero__visual {
+/* Hero image visual enhancements — same zoom in/out on every page */
+.page-hero__visual,
+.opc-hero__visual,
+.llp-hero__visual,
+.plc-hero__visual,
+.pvt-hero__visual,
+.s8-hero__visual,
+.tr-hero__visual,
+.msme-hero__visual,
+.lei-hero__visual,
+.fssai-hero__visual,
+.darpan-hero__visual,
+.apeda-hero__visual,
+.iso-hero__visual,
+.gst-hero__visual,
+.spice-hero__visual,
+.sole-hero__visual,
+.tm-hero__visual,
+.roc-hero__visual,
+.hero__visual {
   animation: fadeScaleIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
 }
 
@@ -534,38 +552,55 @@ i.fab {
   animation: glowPulse 4s ease-in-out infinite;
 }
 
-.page-hero__figure {
-  padding: 6px;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.98),
-    rgba(232, 245, 238, 0.95),
-    rgba(233, 240, 247, 0.95)
-  );
-  border: 1px solid rgba(197, 210, 224, 0.6);
-  box-shadow:
-    0 20px 50px rgba(11, 42, 74, 0.12),
-    0 0 0 1px rgba(26, 122, 76, 0.06);
-  animation: heroFloat 5.5s ease-in-out infinite;
-  transition: box-shadow 0.5s ease;
-  border-radius: 24px;
+.page-hero__figure,
+.opc-hero__figure,
+.llp-hero__figure,
+.plc-hero__figure,
+.pvt-hero__figure,
+.s8-hero__figure,
+.msme-hero__figure,
+.lei-hero__figure,
+.fssai-hero__figure,
+.darpan-hero__figure,
+.apeda-hero__figure,
+.iso-hero__figure,
+.gst-hero__figure,
+.spice-hero__figure,
+.sole-hero__figure,
+.tm-hero__figure,
+.roc-hero__figure,
+.tr-hero__photo-frame,
+.hero__figure {
+  padding: 0;
   overflow: hidden;
+  border-radius: 20px;
 }
 
-.page-hero__figure:hover {
-  box-shadow:
-    0 28px 64px rgba(11, 42, 74, 0.16),
-    0 0 0 1px rgba(26, 122, 76, 0.12);
-}
-
-.page-hero__figure img {
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease;
+.page-hero__figure img,
+.opc-hero__img,
+.llp-hero__img,
+.plc-hero__img,
+.pvt-hero__img,
+.s8-hero__img,
+.tr-hero__img,
+.msme-hero__img,
+.lei-hero__img,
+.fssai-hero__img,
+.darpan-hero__img,
+.apeda-hero__img,
+.iso-hero__img,
+.gst-hero__img,
+.spice-hero__img,
+.sole-hero__img,
+.tm-hero__img,
+.roc-hero__img,
+.hero__figure img,
+.hero__image,
+.tr-hero__photo-frame img {
+  animation: heroZoom 6.5s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
   filter: saturate(1.05) contrast(1.02);
-}
-
-.page-hero__figure:hover img {
-  transform: scale(1.03);
-  filter: saturate(1.1) contrast(1.04);
 }
 
 /* ============================
@@ -1327,6 +1362,11 @@ i.fab {
   50% { transform: translateY(-10px); }
 }
 
+@keyframes heroZoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
 @keyframes arrowBounce {
   0%, 100% { transform: translateX(0); }
   50% { transform: translateX(4px); }
@@ -1335,6 +1375,135 @@ i.fab {
 @keyframes playPulse {
   0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(26, 122, 76, 0.3); }
   50% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 0 14px rgba(26, 122, 76, 0); }
+}
+
+
+/* ============================
+   UNIVERSAL HERO ANIMATIONS (match home — all page heroes)
+   ============================ */
+.opc-hero h1,
+.llp-hero h1,
+.plc-hero h1,
+.pvt-hero h1,
+.s8-hero h1,
+.msme-hero h1,
+.lei-hero h1,
+.fssai-hero h1,
+.darpan-hero h1,
+.apeda-hero h1,
+.iso-hero h1,
+.gst-hero h1,
+.spice-hero h1,
+.sole-hero h1,
+.tm-hero h1,
+.roc-hero h1,
+.tr-hero__title,
+.about-hero h1,
+.contact-hero h1 {
+  animation: fadeUp 0.7s ease both;
+}
+
+.opc-hero h1 em,
+.llp-hero h1 em,
+.plc-hero h1 em,
+.pvt-hero h1 em,
+.s8-hero h1 em,
+.msme-hero h1 em,
+.lei-hero h1 em,
+.fssai-hero h1 em,
+.darpan-hero h1 em,
+.apeda-hero h1 em,
+.iso-hero h1 em,
+.gst-hero h1 em,
+.spice-hero h1 em,
+.sole-hero h1 em,
+.tm-hero h1 em,
+.roc-hero h1 em,
+.tr-hero__title-green,
+.about-hero h1 em {
+  background: linear-gradient(135deg, var(--green) 0%, #2ba868 50%, var(--green-dark, #14603c) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientText 4s ease-in-out infinite;
+}
+
+.opc-hero__banner,
+.llp-hero__tag,
+.plc-hero__tag,
+.pvt-hero__tag,
+.s8-hero__tag,
+.tr-hero__pill,
+.about-hero__subtitle {
+  animation: fadeSlideRight 0.7s ease 0.1s both;
+}
+
+.opc-hero__text,
+.llp-hero__text,
+.plc-hero__text,
+.pvt-hero__text,
+.s8-hero__text,
+.tr-hero__text,
+.about-hero p,
+.contact-hero p {
+  animation: fadeUp 0.7s ease 0.16s both;
+}
+
+.opc-hero__perks,
+.llp-hero__perks,
+.plc-hero__perks,
+.pvt-hero__perks,
+.s8-hero__perks,
+.msme-hero__perks,
+.lei-hero__perks,
+.fssai-hero__perks,
+.darpan-hero__perks,
+.apeda-hero__perks,
+.iso-hero__perks,
+.gst-hero__perks,
+.spice-hero__perks,
+.sole-hero__perks,
+.tm-hero__perks,
+.roc-hero__perks,
+.tr-hero__icons {
+  animation: fadeUp 0.7s ease 0.24s both;
+}
+
+.opc-hero .btn,
+.llp-hero .btn,
+.plc-hero .btn,
+.pvt-hero .btn,
+.s8-hero .btn,
+.tr-hero .btn,
+.about-hero .btn,
+.contact-hero .btn {
+  animation: fadeUp 0.7s ease 0.32s both;
+}
+
+.opc-hero__visual,
+.llp-hero__visual,
+.plc-hero__visual,
+.pvt-hero__visual,
+.s8-hero__visual,
+.tr-hero__visual,
+.about-hero__figure {
+  animation: fadeScaleIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.opc-hero__figure,
+.llp-hero__figure,
+.plc-hero__figure,
+.pvt-hero__figure,
+.s8-hero__figure,
+.tr-hero__photo-wrap {
+  animation: fadeScaleIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.reveal.revealed,
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ============================
@@ -1362,8 +1531,37 @@ i.fab {
    RESPONSIVE TWEAKS
    ============================ */
 @media (max-width: 900px) {
-  .page-hero__figure {
+  .page-hero__figure,
+  .opc-hero__figure,
+  .llp-hero__figure,
+  .plc-hero__figure,
+  .pvt-hero__figure,
+  .s8-hero__figure {
     animation: none;
+  }
+
+  .page-hero__figure img,
+  .opc-hero__img,
+  .llp-hero__img,
+  .plc-hero__img,
+  .pvt-hero__img,
+  .s8-hero__img,
+  .tr-hero__img,
+  .msme-hero__img,
+  .lei-hero__img,
+  .fssai-hero__img,
+  .darpan-hero__img,
+  .apeda-hero__img,
+  .iso-hero__img,
+  .gst-hero__img,
+  .spice-hero__img,
+  .sole-hero__img,
+  .tm-hero__img,
+  .roc-hero__img,
+  .hero__figure img,
+  .hero__image,
+  .tr-hero__photo-frame img {
+    animation: heroZoom 6.5s ease-in-out infinite;
   }
 
   body.nav-open {

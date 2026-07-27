@@ -5,7 +5,7 @@
   --green: #1a7a4c;
   --green-dark: #14603c;
   --green-soft: #e8f5ee;
-  --gold: #c9a227;
+  --gold: #1a7a4c;
   --ink: #1a2332;
   --muted: #5a6a7a;
   --line: #e2e8f0;
@@ -419,22 +419,27 @@ ol {
 }
 
 .gst-hero__perks {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem 0.65rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.35rem 0.45rem;
   margin-bottom: 1.6rem;
-  max-width: 36rem;
+  max-width: none;
+  width: 100%;
 }
 
 .gst-hero__perks .perk {
   text-align: center;
-  font-size: 0.72rem;
+  font-size: clamp(0.58rem, 1.05vw, 0.72rem);
   font-weight: 700;
   color: var(--navy);
   display: grid;
-  gap: 0.4rem;
+  gap: 0.35rem;
   justify-items: center;
   line-height: 1.25;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .gst-hero__perks .perk i {
@@ -507,7 +512,7 @@ ol {
 }
 
 .gst-hero__figure:hover .gst-hero__img {
-  transform: scale(1.025);
+  
 }
 
 /* Why */
@@ -1112,10 +1117,6 @@ ol {
     display: none;
   }
 
-  .gst-hero__perks {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .why__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1139,7 +1140,6 @@ ol {
 }
 
 @media (max-width: 420px) {
-  .gst-hero__perks,
   .why__grid {
     grid-template-columns: 1fr;
   }

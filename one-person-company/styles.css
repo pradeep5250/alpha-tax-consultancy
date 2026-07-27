@@ -2,8 +2,8 @@
   --navy: #0b2a4a;
   --navy-mid: #123a62;
   --navy-deep: #071f38;
-  --yellow: #f0c419;
-  --yellow-dark: #d4a80a;
+  --yellow: #1a7a4c;
+  --yellow-dark: #14603c;
   --green: #1a7a4c;
   --ink: #1a2332;
   --muted: #5a6a7a;
@@ -161,7 +161,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav__link:hover,
-.nav__dropdown:hover > .nav__trigger { color: #0d6e8a; }
+.nav__dropdown:hover > .nav__trigger { color: var(--green); }
 .nav__link i { font-size: 0.65rem; }
 .nav__dropdown { position: relative; }
 
@@ -220,7 +220,7 @@ a { color: inherit; text-decoration: none; }
 .nav__dropdown-menu a:hover,
 .nav__dropdown-menu a.is-active {
   background: #eef6fb;
-  color: #0d6e8a;
+  color: var(--green);
 }
 
 .nav-toggle {
@@ -267,12 +267,12 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
 }
 
-.opc-hero h1 em { font-style: normal; color: #0d6e8a; }
+.opc-hero h1 em { font-style: normal; color: var(--green); }
 
 .opc-hero__banner {
   display: inline-block;
-  background: var(--yellow);
-  color: var(--navy-deep);
+  background: var(--green);
+  color: var(--white);
   font-family: var(--display);
   font-weight: 800;
   font-size: 0.88rem;
@@ -310,7 +310,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 50%;
   background: var(--white);
   border: 1px solid var(--line);
-  color: #0d6e8a;
+  color: var(--green);
   display: grid;
   place-items: center;
   box-shadow: 0 6px 16px rgba(11, 42, 74, 0.05);
@@ -343,11 +343,6 @@ a { color: inherit; text-decoration: none; }
   aspect-ratio: 5 / 4;
   object-fit: cover;
   object-position: center 45%;
-  transition: transform 0.5s ease;
-}
-
-.opc-hero__figure:hover .opc-hero__img {
-  transform: scale(1.03);
 }
 
 .opc-hero__caption {
@@ -391,7 +386,7 @@ a { color: inherit; text-decoration: none; }
   height: 56px;
   border-radius: 50%;
   background: #e8f1fb;
-  color: #0d6e8a;
+  color: var(--green);
   display: grid;
   place-items: center;
   margin: 0 auto 0.85rem;
@@ -480,7 +475,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   gap: 0.75rem;
   padding: 0 1.25rem 1.25rem;
-  color: #0d6e8a;
+  color: var(--green);
   font-size: 1.5rem;
 }
 
@@ -527,7 +522,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.88rem;
 }
 
-.trust__grid i { color: #0d6e8a; }
+.trust__grid i { color: var(--green); }
 
 .trust-cta {
   background: var(--navy);

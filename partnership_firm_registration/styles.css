@@ -97,12 +97,12 @@ ul, ol { list-style: none; }
 .page-hero__perks { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.75rem; max-width: 28rem; }
 .page-hero__perks--five { max-width: 32rem; }
 .perk { display: flex; align-items: center; gap: 0.65rem; background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 0.75rem 0.9rem; font-weight: 600; font-size: 0.9rem; color: var(--navy); box-shadow: 0 4px 14px rgba(11, 42, 74, 0.04); }
-.perk--wide { grid-column: 1 / -1; }
+.perk--wide { grid-column: auto; }
 .perk i { color: var(--green); width: 1.1rem; text-align: center; }
 .page-hero__visual { position: relative; display: flex; align-items: center; justify-content: center; }
 .page-hero__glow { position: absolute; width: 85%; height: 70%; left: 50%; top: 52%; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(circle at center, rgba(26, 122, 76, 0.16) 0%, rgba(11, 42, 74, 0.08) 38%, transparent 70%); filter: blur(18px); z-index: 0; pointer-events: none; }
-.page-hero__figure { position: relative; z-index: 1; margin: 0; width: 100%; max-width: 580px; border-radius: 24px; overflow: hidden; }
-.page-hero__figure img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 24px; box-shadow: 0 8px 16px rgba(11, 42, 74, 0.05), 0 24px 48px rgba(11, 42, 74, 0.12); }
+.page-hero__figure { position: relative; z-index: 1; margin: 0 auto; width: 100%; max-width: min(100%, 520px); aspect-ratio: 4 / 3; border-radius: 20px; overflow: hidden; }
+.page-hero__figure img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center; border-radius: 0; }
 
 /* Benefits section */
 .benefits-section { padding: 1.5rem 0; background: var(--bg); }

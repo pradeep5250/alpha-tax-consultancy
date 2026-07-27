@@ -6,8 +6,8 @@
   --green-dark: #14603c;
   --green-deep: #0f4a2e;
   --green-soft: #e8f5ee;
-  --gold: #c9a227;
-  --gold-light: #e8c96a;
+  --gold: #1a7a4c;
+  --gold-light: #1f8f58;
   --ink: #1a2332;
   --muted: #5a6a7a;
   --line: #e2e8f0;
@@ -494,7 +494,7 @@ ol {
 }
 
 .spice-hero__figure:hover .spice-hero__img {
-  transform: scale(1.03);
+  
 }
 
 /* Coverage */

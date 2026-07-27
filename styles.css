@@ -275,8 +275,8 @@ main section[id] {
 }
 
 .logo__img {
-  width: 56px;
-  height: 56px;
+  width: 68px;
+  height: 68px;
   object-fit: contain;
   display: block;
   flex-shrink: 0;
@@ -292,7 +292,7 @@ main section[id] {
 
 .logo__text strong {
   font-family: var(--display);
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   font-weight: 800;
   color: var(--navy);
   letter-spacing: 0.06em;
@@ -304,7 +304,7 @@ main section[id] {
   align-items: flex-start;
   gap: 0.12rem;
   font-family: var(--display);
-  font-size: 0.72rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--navy);
   letter-spacing: 0.08em;
@@ -795,7 +795,7 @@ main section[id] {
   box-shadow:
     0 20px 50px rgba(11, 42, 74, 0.12),
     0 0 0 1px rgba(26, 122, 76, 0.06);
-  animation: heroFloat 5.5s ease-in-out infinite;
+  animation: none;
   transition: box-shadow 0.5s ease;
 }
 
@@ -816,13 +816,14 @@ main section[id] {
   box-shadow:
     0 8px 16px rgba(11, 42, 74, 0.05),
     0 2px 0 rgba(255, 255, 255, 0.65) inset;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease;
+  animation: heroZoom 6.5s ease-in-out infinite;
+  transform-origin: center center;
   filter: saturate(1.05) contrast(1.02);
 }
 
-.hero__figure:hover .hero__image {
-  transform: scale(1.03);
-  filter: saturate(1.1) contrast(1.04);
+@keyframes heroZoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
 }
 
 @keyframes heroFloat {
