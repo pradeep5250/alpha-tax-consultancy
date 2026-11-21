@@ -5,8 +5,8 @@
   --green: #1a7a4c;
   --green-dark: #14603c;
   --green-soft: #e8f5ee;
-  --gold: #1a7a4c;
-  --gold-dark: #14603c;
+  --gold: #e8b84a;
+  --gold-dark: #c9962a;
   --ink: #1a2332;
   --muted: #5a6a7a;
   --line: #e2e8f0;
@@ -189,43 +189,25 @@ ol {
 .logo__text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  line-height: 1.05;
+  line-height: 1.15;
 }
 
 .logo__text strong {
   font-family: var(--display);
-  font-size: 1.4rem;
-  font-weight: 800;
+  font-size: 0.95rem;
   color: var(--navy);
-  letter-spacing: 0.06em;
-  text-shadow: 0 1px 0 rgba(11, 42, 74, 0.12);
 }
 
 .logo__text > span {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 0.12rem;
-  font-family: var(--display);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  text-shadow: 0 1px 0 rgba(11, 42, 74, 0.08);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--green);
 }
 
-.logo__tm {
-  font-size: 0.55em;
-  font-weight: 800;
-  color: #e11d2e;
-  line-height: 1;
-  position: relative;
-  top: -0.15em;
-  left: 0.05em;
-  letter-spacing: 0;
+.logo__text em {
   font-style: normal;
+  font-size: 0.65rem;
+  color: var(--muted);
 }
 
 .nav {
@@ -452,6 +434,51 @@ ol {
   color: var(--white);
 }
 
+.sole-hero__register {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--navy);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  margin-bottom: 1.5rem;
+  max-width: 28rem;
+  box-shadow: 0 8px 20px rgba(11, 42, 74, 0.05);
+}
+
+.sole-hero__register h3 {
+  font-family: var(--display);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+
+.sole-hero__register-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.register-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--green-soft);
+  color: var(--green-dark);
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.register-chip:hover {
+  background: var(--green);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
 .sole-hero__visual {
   position: relative;
   display: flex;
@@ -530,7 +557,7 @@ ol {
 }
 
 .sole-hero__figure:hover .sole-hero__img {
-  
+  transform: scale(1.03);
 }
 
 @keyframes floatBadge {
@@ -612,7 +639,7 @@ ol {
 
 /* Documents + Apply */
 .info {
-  padding: 1rem 0 2rem;
+  padding: 1rem 0 4rem;
   background: var(--bg);
 }
 
@@ -894,7 +921,7 @@ ol {
 
 /* Many benefits */
 .many {
-  padding: 1rem 0 2rem;
+  padding: 1rem 0 4rem;
   background: var(--bg);
 }
 
@@ -1159,6 +1186,11 @@ ol {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .logo__text em {
+    display: none;
+  }
+
   .sole-hero__badge {
     width: 88px;
     height: 88px;

@@ -182,43 +182,25 @@ a {
 .logo__text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  line-height: 1.05;
+  line-height: 1.15;
 }
 
 .logo__text strong {
   font-family: var(--display);
-  font-size: 1.4rem;
-  font-weight: 800;
+  font-size: 0.95rem;
   color: var(--navy);
-  letter-spacing: 0.06em;
-  text-shadow: 0 1px 0 rgba(11, 42, 74, 0.12);
 }
 
 .logo__text > span {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 0.12rem;
-  font-family: var(--display);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  text-shadow: 0 1px 0 rgba(11, 42, 74, 0.08);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--green);
 }
 
-.logo__tm {
-  font-size: 0.55em;
-  font-weight: 800;
-  color: #e11d2e;
-  line-height: 1;
-  position: relative;
-  top: -0.15em;
-  left: 0.05em;
-  letter-spacing: 0;
+.logo__text em {
   font-style: normal;
+  font-size: 0.65rem;
+  color: var(--muted);
 }
 
 .nav {
@@ -479,12 +461,12 @@ a {
 }
 
 .msme-hero__figure:hover .msme-hero__img {
-  
+  transform: scale(1.03);
 }
 
 /* Benefits */
 .benefits {
-  padding: 1.5rem 0;
+  padding: 2.5rem 0;
   background: var(--white);
 }
 
@@ -528,7 +510,7 @@ a {
 
 /* Who can apply */
 .apply {
-  padding: 1rem 0 2rem;
+  padding: 1rem 0 4rem;
   background: var(--bg);
 }
 
@@ -610,7 +592,7 @@ a {
 
 /* Documents */
 .docs {
-  padding: 1.5rem 0;
+  padding: 2.5rem 0;
   background: var(--white);
 }
 
@@ -888,5 +870,9 @@ a {
 
   .trust__grid {
     grid-template-columns: 1fr;
+  }
+
+  .logo__text em {
+    display: none;
   }
 }

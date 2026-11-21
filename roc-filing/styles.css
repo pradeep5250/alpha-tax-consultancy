@@ -176,43 +176,25 @@ ol {
 .logo__text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  line-height: 1.05;
+  line-height: 1.15;
 }
 
 .logo__text strong {
   font-family: var(--display);
-  font-size: 1.4rem;
-  font-weight: 800;
+  font-size: 0.95rem;
   color: var(--navy);
-  letter-spacing: 0.06em;
-  text-shadow: 0 1px 0 rgba(11, 42, 74, 0.12);
 }
 
 .logo__text > span {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 0.12rem;
-  font-family: var(--display);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  text-shadow: 0 1px 0 rgba(11, 42, 74, 0.08);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--green);
 }
 
-.logo__tm {
-  font-size: 0.55em;
-  font-weight: 800;
-  color: #e11d2e;
-  line-height: 1;
-  position: relative;
-  top: -0.15em;
-  left: 0.05em;
-  letter-spacing: 0;
+.logo__text em {
   font-style: normal;
+  font-size: 0.65rem;
+  color: var(--muted);
 }
 
 .nav {
@@ -493,7 +475,7 @@ ol {
 }
 
 .roc-hero__figure:hover .roc-hero__img {
-  
+  transform: scale(1.03);
 }
 
 /* Services */
@@ -676,7 +658,7 @@ ol {
 
 /* Info */
 .info {
-  padding: 1rem 0 1.85rem;
+  padding: 1rem 0 3.5rem;
   background: var(--white);
 }
 
@@ -785,7 +767,7 @@ ol {
 
 /* CTA */
 .cta {
-  padding: 0 0 1.75rem;
+  padding: 0 0 3rem;
   background: var(--white);
 }
 
@@ -960,5 +942,9 @@ ol {
   .cta__box {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .logo__text em {
+    display: none;
   }
 }

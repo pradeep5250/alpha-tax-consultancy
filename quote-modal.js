@@ -17,11 +17,6 @@
     .modal__panel input:focus,.modal__panel textarea:focus,.modal__panel select:focus{outline:none;border-color:#1a7a4c;background:#fff;box-shadow:0 0 0 3px rgba(26,122,76,.15)}
     .modal__panel .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.4rem;border-radius:8px;border:none;background:#1a7a4c;color:#fff;font-family:Outfit,Manrope,system-ui,sans-serif;font-weight:700;font-size:.88rem;text-transform:uppercase;letter-spacing:.02em;cursor:pointer}
     .modal__panel .btn:hover{background:#14603c}
-    .modal__check{display:flex;align-items:flex-start;justify-content:flex-start;gap:.7rem;font-size:.85rem;color:#5a6a7a;font-weight:500;line-height:1.45;cursor:pointer;text-align:left}
-    .modal__check input[type="checkbox"]{width:1.25rem;height:1.25rem;min-width:1.25rem;margin:.1rem 0 0;padding:0;accent-color:#1a7a4c;cursor:pointer;flex-shrink:0;border-radius:4px}
-    .modal__check span{flex:1;text-align:left}
-    .modal__check a{color:#1a7a4c;font-weight:700;text-decoration:none}
-    .modal__check a:hover{text-decoration:underline}
     .modal__success{display:none;margin:0;text-align:center;font-weight:700;color:#1a7a4c}
     .modal__success.show{display:block}
   `;
@@ -79,10 +74,6 @@
           <option>Other</option>
         </select>
         <textarea id="message" name="message" rows="3" placeholder="Tell us what you need"></textarea>
-        <label class="modal__check">
-          <input type="checkbox" name="consent" required />
-          <span>I agree to the <a href="#">Privacy Policy</a> and consent to being contacted about my enquiry.</span>
-        </label>
         <button type="submit" class="btn btn--primary">Submit Request</button>
         <p class="modal__success" id="quoteSuccess">Opening WhatsApp…</p>
       </form>
@@ -135,13 +126,10 @@ ${message}`;
   const isQuoteTrigger = (el) => {
     if (!el || el.closest(".top-bar__contacts")) return false;
     if (el.closest(".modal")) return false;
-    // Let Contact Us links navigate to the contact page
-    const href = (el.getAttribute("href") || "").toLowerCase();
-    if (href.includes("contact-us")) return false;
     const label = (el.textContent || "").replace(/\s+/g, " ").trim().toLowerCase();
     if (!label) return false;
-    if (label.includes("contact us")) return false;
     return (
+      label.includes("contact us") ||
       label.includes("get a quote") ||
       label.includes("get started") ||
       /\bquote\b/.test(label)

@@ -1,12 +1,10 @@
 /* ============================================================
-   SHARED ANIMATIONS JS — same behavior as home on every page
-   Scroll reveal, back-to-top, parallax tilt, doc touch effects
+   SHARED ANIMATIONS JS
+   Enhances all sub-pages with scroll reveal, back-to-top,
+   parallax tilt, and improved interactions.
    ============================================================ */
 (() => {
-  if (window.__alphaAnimationsReady) return;
-  window.__alphaAnimationsReady = true;
-
-  /* Mobile nav polish — body scroll lock, click-outside */
+  /* Mobile nav polish — full-width panel, body scroll lock, click-outside */
   const navToggle = document.getElementById("navToggle");
   const navMenu = document.getElementById("navMenu");
   if (navToggle && navMenu) {
@@ -15,6 +13,7 @@
     };
 
     navToggle.addEventListener("click", () => {
+      // Let page script toggle .open first, then sync on next frame
       requestAnimationFrame(syncBodyLock);
     });
 
@@ -43,7 +42,7 @@
     });
   }
 
-  /* Back to top */
+  /* Back to top button — inject if not present */
   let backToTop = document.getElementById("backToTop");
   if (!backToTop) {
     backToTop = document.createElement("button");
@@ -59,24 +58,13 @@
   };
   window.addEventListener("scroll", toggleBackToTop, { passive: true });
   toggleBackToTop();
+
   backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  /* Scroll reveal — home-matching selectors + common subpage cards */
+  /* Scroll reveal system */
   const revealSelectors = [
-    ".service-card",
-    ".why__feature",
-    ".process__step",
-    ".resources__inner",
-    ".section-head",
-    ".section-title",
-    ".stats__item",
-    ".footer__cta",
-    ".footer__info",
-    ".reveal--left",
-    ".reveal--right",
-    ".reveal--scale",
     ".benefit-card",
     ".doc-card",
     ".docs-card",
@@ -84,10 +72,21 @@
     ".reqs-panel",
     ".tr-docs__panel",
     ".tr-req__panel",
-    ".tr-benefit",
-    ".tr-process__step",
     ".document-card",
     ".why-card",
+    ".process__step",
+    ".service-card",
+    ".why__feature",
+    ".resources__inner",
+    ".section-title",
+    ".section-head",
+    ".stats__item",
+    ".footer__cta",
+    ".footer__info",
+    ".reveal--left",
+    ".reveal--right",
+    ".reveal--scale",
+    /* generic page sections */
     ".faq-item",
     ".timeline-item",
     ".pricing-card",
@@ -98,17 +97,6 @@
     ".eligibility-card",
     ".type-card",
     ".penalty-card",
-    ".advantages__grid article",
-    ".trust-cta",
-    ".trust__grid > div",
-    ".trust__item",
-    ".about-team__block",
-    ".about-exist__list li",
-    ".contact-card",
-    ".contact-info-card",
-    ".perk",
-    ".apply-card",
-    ".docs-icon-item",
   ];
 
   const revealTargets = document.querySelectorAll(revealSelectors.join(", "));
@@ -117,37 +105,29 @@
     if (
       !el.classList.contains("reveal--left") &&
       !el.classList.contains("reveal--right") &&
-      !el.classList.contains("reveal--scale") &&
-      !el.classList.contains("reveal")
+      !el.classList.contains("reveal--scale")
     ) {
       el.classList.add("reveal");
     }
   });
-
-  const markVisible = (el) => {
-    el.classList.add("visible");
-    el.classList.add("revealed"); // trust page legacy class
-  };
 
   if ("IntersectionObserver" in window) {
     const revealObs = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          markVisible(entry.target);
+          entry.target.classList.add("visible");
           obs.unobserve(entry.target);
         });
       },
       { threshold: 0.1, rootMargin: "0px 0px -60px 0px" }
     );
-    document.querySelectorAll(".reveal, .reveal--left, .reveal--right, .reveal--scale").forEach((el) => {
-      revealObs.observe(el);
-    });
+    revealTargets.forEach((el) => revealObs.observe(el));
   } else {
-    document.querySelectorAll(".reveal, .reveal--left, .reveal--right, .reveal--scale").forEach(markVisible);
+    revealTargets.forEach((el) => el.classList.add("visible"));
   }
 
-  /* Document cards — touch press + ripple */
+  /* Document cards — touch press + ripple (all pages) */
   const docCardSelector = [
     ".doc-card",
     ".docs-card",
@@ -173,6 +153,7 @@
   };
 
   document.querySelectorAll(docCardSelector).forEach((card) => {
+    // Only wire info-cards that hold a document list
     if (
       card.classList.contains("info-card") &&
       !card.querySelector(".doc-list, ol")
@@ -195,6 +176,7 @@
     card.addEventListener("mouseleave", pressOff);
   });
 
+  /* Document list rows — press highlight on touch/click */
   const docRowSelector = [
     ".doc-card ol li",
     ".doc-card ul li",
@@ -220,6 +202,7 @@
     row.addEventListener("mouseleave", rowOff);
   });
 
+  /* Income Tax-style icon document tiles */
   document.querySelectorAll(".docs-icon-item").forEach((item) => {
     const pressOn = (e) => {
       item.classList.add("is-touching");
@@ -235,19 +218,41 @@
     item.addEventListener("mouseleave", pressOff);
   });
 
-  /* Hero images use CSS zoom animation — no tilt (keeps transform free) */
+  /* Parallax tilt on page-hero image */
+  const heroFigure = document.querySelector(".page-hero__figure");
+  const heroVisual = document.querySelector(".page-hero__visual");
 
-  /* Navbar scrolled shadow (same as home) */
-  const navbar = document.getElementById("navbar");
-  if (navbar) {
-    const onScroll = () => navbar.classList.toggle("scrolled", window.scrollY > 12);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+  if (heroFigure && heroVisual && window.matchMedia("(min-width: 901px)").matches) {
+    heroVisual.addEventListener("mousemove", (e) => {
+      const rect = heroVisual.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      const tiltX = y * 6;
+      const tiltY = -x * 6;
+      heroFigure.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-5px)`;
+    });
+
+    heroVisual.addEventListener("mouseleave", () => {
+      heroFigure.style.transform = "";
+    });
   }
 
-  /* Year stamp if present */
-  const yearEl = document.getElementById("year");
-  if (yearEl && !yearEl.textContent.trim()) {
-    yearEl.textContent = String(new Date().getFullYear());
+  /* Also handle main-page hero__figure if present */
+  const mainHeroFigure = document.querySelector(".hero__figure");
+  const mainHeroVisual = document.querySelector(".hero__visual");
+
+  if (mainHeroFigure && mainHeroVisual && !heroFigure && window.matchMedia("(min-width: 901px)").matches) {
+    mainHeroVisual.addEventListener("mousemove", (e) => {
+      const rect = mainHeroVisual.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      const tiltX = y * 6;
+      const tiltY = -x * 6;
+      mainHeroFigure.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-5px)`;
+    });
+
+    mainHeroVisual.addEventListener("mouseleave", () => {
+      mainHeroFigure.style.transform = "";
+    });
   }
 })();
